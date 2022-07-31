@@ -1,0 +1,40 @@
+﻿@model Zadacha3
+@{
+    ViewData["Title"] = "Create";
+}
+
+<form method="post">
+    <div class="border p-3 mt-4">
+        <div class="row pb-2">
+            <h2 class="text-primary">Добавить Задачу</h2>
+            <hr/>
+            <div>
+                <div asp-validation-summary="All"></div>
+                <div class="mb-3">
+                    <label asp-for="Name">Название</label>
+                    <input asp-for="Name" class="form-control"/>
+                    <span asp-validation-for="Name" class="text-danger">Введите название</span>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="Description">Описание</label>
+                    <input asp-for="Description" class="form-control"/>
+                </div>
+                <div class="mb-3">
+                    <label asp-for="EstimatedHours">Примерное время выполнения</label>
+                    <input asp-for="EstimatedHours" class="form-control"/>
+                </div>
+                 <div class="mb-3">
+                    <label asp-for="IsDone">Сделано</label>
+                    <input asp-for="IsDone" class="form-control"/>
+                </div>
+            </div>
+        </div>
+        <button type="submit"class="btn btn-primary" style="width:150px">Добавить задачу</button>
+        <a asp-controller="Zad1" asp-action="Index" class="btn btn-primary" style="width:150px">Вернуться обратно</a>
+    </div>
+</form>
+@section Scripts{
+    @{
+        <partial name="_ValidationScriptsPartial"/>
+    }
+}
